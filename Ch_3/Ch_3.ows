@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme version="2.0" title="" description="">
+	<nodes>
+		<node id="0" name="Python Script" qualified_name="Orange.widgets.data.owpythonscript.OWPythonScript" project_name="Orange3" version="" title="Python Script" position="(49.0, 204.0)" />
+		<node id="1" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="Scatter Plot" position="(245.0, 162.0)" />
+		<node id="2" name="k-Means" qualified_name="Orange.widgets.unsupervised.owkmeans.OWKMeans" project_name="Orange3" version="" title="k-Means" position="(226.0, 306.0)" />
+		<node id="3" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="Scatter Plot (1)" position="(421.0, 306.0)" />
+		<node id="4" name="Silhouette Plot" qualified_name="Orange.widgets.visualize.owsilhouetteplot.OWSilhouettePlot" project_name="Orange3" version="" title="Silhouette Plot" position="(426.0, 420.0)" />
+		<node id="5" name="DBSCAN" qualified_name="Orange.widgets.unsupervised.owdbscan.OWDBSCAN" project_name="Orange3" version="" title="DBSCAN" position="(235.0, 517.0)" />
+		<node id="6" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="Scatter Plot (2)" position="(422.0, 520.0)" />
+		<node id="7" name="PCA" qualified_name="Orange.widgets.unsupervised.owpca.OWPCA" project_name="Orange3" version="" title="PCA" position="(221.0, 750.0)" />
+		<node id="8" name="Python Script" qualified_name="Orange.widgets.data.owpythonscript.OWPythonScript" project_name="Orange3" version="" title="Python Script (1)" position="(60.0, 646.0)" />
+		<node id="9" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Data Table" position="(231.0, 635.0)" />
+		<node id="10" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Data Table (1)" position="(388.0, 689.0)" />
+		<node id="11" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="Scatter Plot (3)" position="(384.0, 785.0)" />
+		<node id="12" name="t-SNE" qualified_name="Orange.widgets.unsupervised.owtsne.OWtSNE" project_name="Orange3" version="" title="t-SNE" position="(220.0, 924.0)" />
+		<node id="13" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Data Table (2)" position="(393.0, 869.0)" />
+	</nodes>
+	<links>
+		<link id="0" source_node_id="0" sink_node_id="1" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="1" source_node_id="0" sink_node_id="2" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="2" source_node_id="2" sink_node_id="3" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="annotated_data" sink_channel_id="data" />
+		<link id="3" source_node_id="2" sink_node_id="4" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="annotated_data" sink_channel_id="data" />
+		<link id="4" source_node_id="0" sink_node_id="5" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="5" source_node_id="5" sink_node_id="6" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="annotated_data" sink_channel_id="data" />
+		<link id="6" source_node_id="8" sink_node_id="9" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="7" source_node_id="8" sink_node_id="7" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="8" source_node_id="7" sink_node_id="10" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="9" source_node_id="7" sink_node_id="11" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="10" source_node_id="8" sink_node_id="12" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="11" source_node_id="12" sink_node_id="13" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="annotated_data" sink_channel_id="data" />
+	</links>
+	<annotations />
+	<thumbnail />
+	<node_properties>
+		<properties node_id="0" format="literal">{'controlAreaVisible': True, 'currentScriptIndex': 0, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x05c\x00\x00\x01\x15\x00\x00\x08\x07\x00\x00\x03\x88\x00\x00\x05c\x00\x00\x011\x00\x00\x08\x07\x00\x00\x03\x88\x00\x00\x00\x01\x00\x00\x00\x00\x03 \x00\x00\x05c\x00\x00\x011\x00\x00\x08\x07\x00\x00\x03\x88', 'scriptLibrary': [{'name': 'Table from numpy', 'script': 'import numpy as np\nimport pandas as pd\nfrom sklearn.datasets import make_moons\nfrom Orange.data import Table, Domain, ContinuousVariable, DiscreteVariable\n\n# 1. 데이터 생성\nX, y = make_moons(n_samples=500, noise=0.4, random_state=42)\n\n# 2. DataFrame 구성\ndf = pd.DataFrame(X, columns=["Feature 1", "Feature 2"])\ndf["Label"] = y  # 0 또는 1\n\n# 3. Orange Domain 정의\ndomain = Domain(\n    [ContinuousVariable("Feature 1"), ContinuousVariable("Feature 2")],\n    DiscreteVariable("Label", values=["0", "1"])\n)\n\n# 4. Orange Table로 변환\nout_data = Table.from_list(domain, df.values.tolist())\n', 'filename': None}], 'scriptText': 'import numpy as np\nimport pandas as pd\nfrom sklearn.datasets import make_blobs\nfrom Orange.data import Table, Domain, ContinuousVariable, DiscreteVariable\n\n# 1. 데이터 생성\nX, y = make_blobs(n_samples=500, centers=3, cluster_std=1.0, random_state=42)\n\n# 2. DataFrame 구성\ndf = pd.DataFrame(X, columns=["Feature 1", "Feature 2"])\ndf["Label"] = y  # 0, 1, 2의 정수 클래스\n\n# 3. Orange Domain 정의\nclass_labels = [str(c) for c in sorted(np.unique(y))]  # 예: ["0", "1", "2"]\ndomain = Domain(\n    [ContinuousVariable("Feature 1"), ContinuousVariable("Feature 2")],\n    DiscreteVariable("Label", values=class_labels)\n)\n\n# 4. Orange Table로 변환\nout_data = Table.from_list(domain, df.values.tolist())\n', 'splitterState': b'\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\xa8\x00\x00\x00h\x01\xff\xff\xff\xff\x01\x00\x00\x00\x02\x00', 'vimModeEnabled': False, '__version__': 2}</properties>
+		<properties node_id="1" format="pickle">gASVLwMAAAAAAAB9lCiMDWF0dHJfeF9pc19hYnOUiYwNYXR0cl95X2lzX2Fic5SJjAthdXRvX2Nv
+bW1pdJSIjAthdXRvX3NhbXBsZZSIjBJjb250cm9sQXJlYVZpc2libGWUiIwTc2F2ZWRXaWRnZXRH
+ZW9tZXRyeZRDQgHZ0MsAAwAAAAAAAAAAABkAAAT/AAADHwAAAAAAAAA1AAAFnwAAA4MAAAAAAgAA
+AAUAAAAAAAAAADUAAAT/AAADH5SMCXNlbGVjdGlvbpROjBF0b29sdGlwX3Nob3dzX2FsbJSIjA92
+aXN1YWxfc2V0dGluZ3OUfZSMBWdyYXBolH2UKIwLYWxwaGFfdmFsdWWUS4CMDWNsYXNzX2RlbnNp
+dHmUiYwRaml0dGVyX2NvbnRpbnVvdXOUiIwLaml0dGVyX3NpemWUSwKME2xhYmVsX29ubHlfc2Vs
+ZWN0ZWSUiYwWb3J0aG9ub3JtYWxfcmVncmVzc2lvbpSJjAtwb2ludF93aWR0aJRLCowMc2hvd19l
+bGxpcHNllImMCXNob3dfZ3JpZJSIjAtzaG93X2xlZ2VuZJSIjA1zaG93X3JlZ19saW5llIl1jAtf
+X3ZlcnNpb25fX5RLBYwQY29udGV4dF9zZXR0aW5nc5RdlIwVb3Jhbmdld2lkZ2V0LnNldHRpbmdz
+lIwHQ29udGV4dJSTlCmBlH2UKIwGdmFsdWVzlH2UKIwKYXR0cl9jb2xvcpSMBUxhYmVslEtlhpSM
+CmF0dHJfbGFiZWyUTkr+////hpSMCmF0dHJfc2hhcGWUTkr+////hpSMCWF0dHJfc2l6ZZROSv7/
+//+GlIwGYXR0cl94lIwJRmVhdHVyZSAxlEtmhpSMDGF0dHJfeF9sb3dlcpROSv7///+GlIwMYXR0
+cl94X3VwcGVylE5K/v///4aUjAZhdHRyX3mUjAlGZWF0dXJlIDKUS2aGlIwMYXR0cl95X2xvd2Vy
+lE5K/v///4aUjAxhdHRyX3lfdXBwZXKUTkr+////hpRoDH2UaBlLBXWMCmF0dHJpYnV0ZXOUfZQo
+aC1LAmg0SwJoJEsBdYwFbWV0YXOUfZR1YmF1Lg==
+</properties>
+		<properties node_id="2" format="literal">{'auto_commit': True, 'controlAreaVisible': True, 'k': 2, 'k_from': 2, 'k_to': 8, 'max_iterations': 300, 'n_init': 10, 'normalize': True, 'optimize_k': False, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x05\x8c\x00\x00\x01\x9f\x00\x00\x07l\x00\x00\x03\x0c\x00\x00\x05\x8c\x00\x00\x01\xbb\x00\x00\x07l\x00\x00\x03\x0c\x00\x00\x00\x01\x00\x00\x00\x00\x03 \x00\x00\x05\x8c\x00\x00\x01\xbb\x00\x00\x07l\x00\x00\x03\x0c', 'selection': None, 'smart_init': 0, '__version__': 2}</properties>
+		<properties node_id="3" format="pickle">gASVTAMAAAAAAAB9lCiMDWF0dHJfeF9pc19hYnOUiYwNYXR0cl95X2lzX2Fic5SJjAthdXRvX2Nv
+bW1pdJSIjAthdXRvX3NhbXBsZZSIjBJjb250cm9sQXJlYVZpc2libGWUiIwTc2F2ZWRXaWRnZXRH
+ZW9tZXRyeZRDQgHZ0MsAAwAAAAAAAAAAABkAAAT/AAADHwAAAAAAAAA1AAAFnwAAA4MAAAAAAgAA
+AAUAAAAAAAAAADUAAAT/AAADH5SMCXNlbGVjdGlvbpROjBF0b29sdGlwX3Nob3dzX2FsbJSIjA92
+aXN1YWxfc2V0dGluZ3OUfZSMBWdyYXBolH2UKIwLYWxwaGFfdmFsdWWUS4CMDWNsYXNzX2RlbnNp
+dHmUiYwRaml0dGVyX2NvbnRpbnVvdXOUiIwLaml0dGVyX3NpemWUSwKME2xhYmVsX29ubHlfc2Vs
+ZWN0ZWSUiYwWb3J0aG9ub3JtYWxfcmVncmVzc2lvbpSJjAtwb2ludF93aWR0aJRLCowMc2hvd19l
+bGxpcHNllImMCXNob3dfZ3JpZJSIjAtzaG93X2xlZ2VuZJSIjA1zaG93X3JlZ19saW5llIl1jAtf
+X3ZlcnNpb25fX5RLBYwQY29udGV4dF9zZXR0aW5nc5RdlIwVb3Jhbmdld2lkZ2V0LnNldHRpbmdz
+lIwHQ29udGV4dJSTlCmBlH2UKIwGdmFsdWVzlH2UKIwKYXR0cl9jb2xvcpSMB0NsdXN0ZXKUS2WG
+lIwKYXR0cl9sYWJlbJROSv7///+GlIwKYXR0cl9zaGFwZZROSv7///+GlIwJYXR0cl9zaXpllE5K
+/v///4aUjAZhdHRyX3iUjAlGZWF0dXJlIDGUS2aGlIwMYXR0cl94X2xvd2VylE5K/v///4aUjAxh
+dHRyX3hfdXBwZXKUTkr+////hpSMBmF0dHJfeZSMCUZlYXR1cmUgMpRLZoaUjAxhdHRyX3lfbG93
+ZXKUTkr+////hpSMDGF0dHJfeV91cHBlcpROSv7///+GlGgMfZRoGUsFdYwKYXR0cmlidXRlc5R9
+lChoLUsCaDRLAowFTGFiZWyUSwF1jAVtZXRhc5R9lChoJEsBjApTaWxob3VldHRllEsCdXViYXUu
+</properties>
+		<properties node_id="4" format="pickle">gASVuQEAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMCGJhcl9zaXpllEsFjBJjb250cm9sQXJlYVZp
+c2libGWUiIwMZGlzdGFuY2VfaWR4lEsAjBBncm91cF9ieV9jbHVzdGVylIiMEXBlbmRpbmdfc2Vs
+ZWN0aW9ulF2UjBNzYXZlZFdpZGdldEdlb21ldHJ5lENCAdnQywADAAAAAAVcAAAA1wAAB9MAAAPp
+AAAFXAAAAPMAAAfTAAAD6QAAAAEAAAAAAyAAAAVcAAAA8wAAB9MAAAPplIwLX192ZXJzaW9uX1+U
+SwKMEGNvbnRleHRfc2V0dGluZ3OUXZSMFW9yYW5nZXdpZGdldC5zZXR0aW5nc5SMB0NvbnRleHSU
+k5QpgZR9lCiMBnZhbHVlc5R9lCiMDmFubm90YXRpb25fdmFylIwHQ2x1c3RlcpRLZYaUjAtjbHVz
+dGVyX3ZhcpRoFUtlhpRoCksCdYwKYXR0cmlidXRlc5R9lCiMCUZlYXR1cmUgMZRLAowJRmVhdHVy
+ZSAylEsCjAVMYWJlbJRLAXWMBW1ldGFzlH2UKGgVSwGMClNpbGhvdWV0dGWUSwJ1dWJhdS4=
+</properties>
+		<properties node_id="5" format="literal">{'auto_commit': True, 'controlAreaVisible': True, 'eps': 0.09966493310959638, 'metric_idx': 0, 'min_samples': 3, 'normalize': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x05\x00\x00\x00\x00\x19\x00\x00\x08\x1f\x00\x00\x04\xff\x00\x00\x00\x00\x00\x00\x005\x00\x00\x04\xff\x00\x00\x03\x1f\x00\x00\x00\x01\x02\x00\x00\x00\x03 \x00\x00\x05\x00\x00\x00\x005\x00\x00\x08\x1f\x00\x00\x04\xff', '__version__': 1}</properties>
+		<properties node_id="6" format="pickle">gASVTgMAAAAAAAB9lCiMDWF0dHJfeF9pc19hYnOUiYwNYXR0cl95X2lzX2Fic5SJjAthdXRvX2Nv
+bW1pdJSIjAthdXRvX3NhbXBsZZSIjBJjb250cm9sQXJlYVZpc2libGWUiIwTc2F2ZWRXaWRnZXRH
+ZW9tZXRyeZRDQgHZ0MsAAwAAAAAAAAAAABkAAAT/AAADHwAAAAAAAAA1AAAFnwAAA4MAAAAAAgAA
+AAUAAAAAAAAAADUAAAT/AAADH5SMCXNlbGVjdGlvbpRdlIwRdG9vbHRpcF9zaG93c19hbGyUiIwP
+dmlzdWFsX3NldHRpbmdzlH2UjAVncmFwaJR9lCiMC2FscGhhX3ZhbHVllEuAjA1jbGFzc19kZW5z
+aXR5lImMEWppdHRlcl9jb250aW51b3VzlIiMC2ppdHRlcl9zaXpllEsCjBNsYWJlbF9vbmx5X3Nl
+bGVjdGVklImMFm9ydGhvbm9ybWFsX3JlZ3Jlc3Npb26UiYwLcG9pbnRfd2lkdGiUSwqMDHNob3df
+ZWxsaXBzZZSJjAlzaG93X2dyaWSUiIwLc2hvd19sZWdlbmSUiIwNc2hvd19yZWdfbGluZZSJdYwL
+X192ZXJzaW9uX1+USwWMEGNvbnRleHRfc2V0dGluZ3OUXZSMFW9yYW5nZXdpZGdldC5zZXR0aW5n
+c5SMB0NvbnRleHSUk5QpgZR9lCiMBnZhbHVlc5R9lCiMCmF0dHJfY29sb3KUjAdDbHVzdGVylEtl
+hpSMCmF0dHJfbGFiZWyUTkr+////hpSMCmF0dHJfc2hhcGWUTkr+////hpSMCWF0dHJfc2l6ZZRO
+Sv7///+GlIwGYXR0cl94lIwJRmVhdHVyZSAxlEtmhpSMDGF0dHJfeF9sb3dlcpROSv7///+GlIwM
+YXR0cl94X3VwcGVylE5K/v///4aUjAZhdHRyX3mUjAlGZWF0dXJlIDKUS2aGlIwMYXR0cl95X2xv
+d2VylE5K/v///4aUjAxhdHRyX3lfdXBwZXKUTkr+////hpRoDX2UaBpLBXWMCmF0dHJpYnV0ZXOU
+fZQoaC5LAmg1SwKMBUxhYmVslEsBdYwFbWV0YXOUfZQoaCVLAYwLREJTQ0FOIENvcmWUSwF1dWJh
+dS4=
+</properties>
+		<properties node_id="7" format="literal">{'auto_commit': True, 'axis_labels': 10, 'controlAreaVisible': True, 'maxp': 20, 'ncomponents': 2, 'normalize': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x05\x00\x00\x00\x00\x19\x00\x00\x08\x1f\x00\x00\x04\xff\x00\x00\x00\x00\x00\x00\x005\x00\x00\x04\xff\x00\x00\x03\x1f\x00\x00\x00\x01\x02\x00\x00\x00\x03 \x00\x00\x05\x00\x00\x00\x005\x00\x00\x08\x1f\x00\x00\x04\xff', 'variance_covered': 75, '__version__': 1}</properties>
+		<properties node_id="8" format="literal">{'controlAreaVisible': True, 'currentScriptIndex': 0, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x05c\x00\x00\x01\x15\x00\x00\x08\x07\x00\x00\x03\x88\x00\x00\x05c\x00\x00\x011\x00\x00\x08\x07\x00\x00\x03\x88\x00\x00\x00\x01\x00\x00\x00\x00\x03 \x00\x00\x05c\x00\x00\x011\x00\x00\x08\x07\x00\x00\x03\x88', 'scriptLibrary': [{'name': 'Table from numpy', 'script': 'import numpy as np\nimport pandas as pd\nfrom sklearn.datasets import make_moons\nfrom Orange.data import Table, Domain, ContinuousVariable, DiscreteVariable\n\n# 1. 데이터 생성\nX, y = make_moons(n_samples=500, noise=0.4, random_state=42)\n\n# 2. DataFrame 구성\ndf = pd.DataFrame(X, columns=["Feature 1", "Feature 2"])\ndf["Label"] = y  # 0 또는 1\n\n# 3. Orange Domain 정의\ndomain = Domain(\n    [ContinuousVariable("Feature 1"), ContinuousVariable("Feature 2")],\n    DiscreteVariable("Label", values=["0", "1"])\n)\n\n# 4. Orange Table로 변환\nout_data = Table.from_list(domain, df.values.tolist())\n', 'filename': None}], 'scriptText': 'import numpy as np\nimport pandas as pd\nfrom sklearn.datasets import make_blobs\nfrom Orange.data import Table, Domain, ContinuousVariable, DiscreteVariable\n\n# 1. 5차원 고차원 데이터 생성\nX_highdim, y_highdim = make_blobs(\n    n_samples=500,\n    centers=4,\n    n_features=5,\n    cluster_std=1.2,\n    random_state=42\n)\n\n# 2. DataFrame 구성\ncolumns = [f"Feature {i+1}" for i in range(X_highdim.shape[1])]\ndf = pd.DataFrame(X_highdim, columns=columns)\ndf["Label"] = y_highdim  # 정답 레이블\n\n# 3. Orange Domain 정의\nfeature_vars = [ContinuousVariable(col) for col in columns]\nclass_values = [str(i) for i in sorted(np.unique(y_highdim))]\ndomain = Domain(\n    feature_vars,\n    DiscreteVariable("Label", values=class_values)\n)\n\n# 4. Orange Table로 변환하여 출력\nout_data = Table.from_list(domain, df.values.tolist())\n', 'splitterState': b'\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\xa8\x00\x00\x00h\x01\xff\xff\xff\xff\x01\x00\x00\x00\x02\x00', 'vimModeEnabled': False, '__version__': 2}</properties>
+		<properties node_id="9" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x05\x00\x00\x00\x02\x1c\x00\x00\x08\x1f\x00\x00\x04?\x00\x00\x05\x00\x00\x00\x028\x00\x00\x08\x1f\x00\x00\x04?\x00\x00\x00\x01\x00\x00\x00\x00\x03 \x00\x00\x05\x00\x00\x00\x028\x00\x00\x08\x1f\x00\x00\x04?', 'select_rows': True, 'show_attribute_labels': True, 'show_distributions': False, 'stored_selection': {'rows': [], 'columns': []}, 'stored_sort': [], '__version__': 1}</properties>
+		<properties node_id="10" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x05\x00\x00\x00\x02\x1c\x00\x00\x08\x1f\x00\x00\x04?\x00\x00\x05\x00\x00\x00\x028\x00\x00\x08\x1f\x00\x00\x04?\x00\x00\x00\x01\x00\x00\x00\x00\x03 \x00\x00\x05\x00\x00\x00\x028\x00\x00\x08\x1f\x00\x00\x04?', 'select_rows': True, 'show_attribute_labels': True, 'show_distributions': False, 'stored_selection': {'rows': [], 'columns': []}, 'stored_sort': [], '__version__': 1}</properties>
+		<properties node_id="11" format="pickle">gASVawMAAAAAAAB9lCiMDWF0dHJfeF9pc19hYnOUiYwNYXR0cl95X2lzX2Fic5SJjAthdXRvX2Nv
+bW1pdJSIjAthdXRvX3NhbXBsZZSIjBJjb250cm9sQXJlYVZpc2libGWUiIwTc2F2ZWRXaWRnZXRH
+ZW9tZXRyeZRDQgHZ0MsAAwAAAAAAAAAAABkAAAT/AAADHwAAAAcAAAA4AAAFBgAAAyIAAAAAAgAA
+AAUAAAAAAAAAADUAAAT/AAADH5SMCXNlbGVjdGlvbpROjBF0b29sdGlwX3Nob3dzX2FsbJSIjA92
+aXN1YWxfc2V0dGluZ3OUfZSMBWdyYXBolH2UKIwLYWxwaGFfdmFsdWWUS4CMDWNsYXNzX2RlbnNp
+dHmUiYwRaml0dGVyX2NvbnRpbnVvdXOUiIwLaml0dGVyX3NpemWUSwKME2xhYmVsX29ubHlfc2Vs
+ZWN0ZWSUiYwWb3J0aG9ub3JtYWxfcmVncmVzc2lvbpSJjAtwb2ludF93aWR0aJRLCowMc2hvd19l
+bGxpcHNllImMCXNob3dfZ3JpZJSIjAtzaG93X2xlZ2VuZJSIjA1zaG93X3JlZ19saW5llIl1jAtf
+X3ZlcnNpb25fX5RLBYwQY29udGV4dF9zZXR0aW5nc5RdlIwVb3Jhbmdld2lkZ2V0LnNldHRpbmdz
+lIwHQ29udGV4dJSTlCmBlH2UKIwGdmFsdWVzlH2UKIwKYXR0cl9jb2xvcpSMBUxhYmVslEtlhpSM
+CmF0dHJfbGFiZWyUTkr+////hpSMCmF0dHJfc2hhcGWUTkr+////hpSMCWF0dHJfc2l6ZZROSv7/
+//+GlIwGYXR0cl94lIwDUEMxlEtmhpSMDGF0dHJfeF9sb3dlcpROSv7///+GlIwMYXR0cl94X3Vw
+cGVylE5K/v///4aUjAZhdHRyX3mUjANQQzKUS2aGlIwMYXR0cl95X2xvd2VylE5K/v///4aUjAxh
+dHRyX3lfdXBwZXKUTkr+////hpRoDH2UaBlLBXWMCmF0dHJpYnV0ZXOUfZQojAlGZWF0dXJlIDGU
+SwKMCUZlYXR1cmUgMpRLAowJRmVhdHVyZSAzlEsCjAlGZWF0dXJlIDSUSwKMCUZlYXR1cmUgNZRL
+AmgkSwF1jAVtZXRhc5R9lChoLUsCaDRLAnV1YmF1Lg==
+</properties>
+		<properties node_id="12" format="pickle">gASVHgMAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNzYXZl
+ZFdpZGdldEdlb21ldHJ5lENCAdnQywADAAAAAAAAAAAAGQAABP8AAAMfAAAAAAAAADUAAAT/AAAD
+HwAAAAACAAAABQAAAAAAAAAANQAABP8AAAMflIwJc2VsZWN0aW9ulE6MD3Zpc3VhbF9zZXR0aW5n
+c5R9lIwFZ3JhcGiUfZQojAthbHBoYV92YWx1ZZRLgIwNY2xhc3NfZGVuc2l0eZSJjAtqaXR0ZXJf
+c2l6ZZRLAIwTbGFiZWxfb25seV9zZWxlY3RlZJSJjAtwb2ludF93aWR0aJRLCowJc2hvd19ncmlk
+lImMC3Nob3dfbGVnZW5klIh1jAtfX3ZlcnNpb25fX5RLBIwQY29udGV4dF9zZXR0aW5nc5RdlIwV
+b3Jhbmdld2lkZ2V0LnNldHRpbmdzlIwHQ29udGV4dJSTlCmBlH2UKIwGdmFsdWVzlH2UKIwKYXR0
+cl9jb2xvcpSMBUxhYmVslEtlhpSMCmF0dHJfbGFiZWyUTkr+////hpSMCmF0dHJfc2hhcGWUTkr+
+////hpSMCWF0dHJfc2l6ZZROSv7///+GlIwTZGlzdGFuY2VfbWV0cmljX2lkeJRLAEr+////hpSM
+DGV4YWdnZXJhdGlvbpRLAUr+////hpSMGWluaXRpYWxpemF0aW9uX21ldGhvZF9pZHiUSwBK/v//
+/4aUjAptdWx0aXNjYWxllIlK/v///4aUjAlub3JtYWxpemWUiEr+////hpSMDnBjYV9jb21wb25l
+bnRzlEsFSv7///+GlIwKcGVycGxleGl0eZRLHkr+////hpSMFXVzZV9wY2FfcHJlcHJvY2Vzc2lu
+Z5SJSv7///+GlGgIfZRoEUsEdYwKYXR0cmlidXRlc5R9lCiMCUZlYXR1cmUgMZRLAowJRmVhdHVy
+ZSAylEsCjAlGZWF0dXJlIDOUSwKMCUZlYXR1cmUgNJRLAowJRmVhdHVyZSA1lEsCaBxLAXWMBW1l
+dGFzlH2UdWJhdS4=
+</properties>
+		<properties node_id="13" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x05\x00\x00\x00\x02\x1c\x00\x00\x08\x1f\x00\x00\x04?\x00\x00\x05\x00\x00\x00\x028\x00\x00\x08\x1f\x00\x00\x04?\x00\x00\x00\x01\x00\x00\x00\x00\x03 \x00\x00\x05\x00\x00\x00\x028\x00\x00\x08\x1f\x00\x00\x04?', 'select_rows': True, 'show_attribute_labels': True, 'show_distributions': False, 'stored_selection': {'rows': [], 'columns': []}, 'stored_sort': [], '__version__': 1}</properties>
+	</node_properties>
+	<session_state>
+		<window_groups />
+	</session_state>
+</scheme>
